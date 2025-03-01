@@ -153,3 +153,28 @@ input[type="submit"]:hover {
 .next-button button:hover {
     background-color: #cc0000;  /* Darker red on hover */
 }
+
+
+/* Styling for the 'Next' button positioned at the top right */
+.next-button1 {
+    position: absolute;
+    top: 20px;  /* Distance from the top of the page */
+    right: 20px; /* Distance from the left of the page */
+    z-index: 100;  /* Ensure it's above other content */
+}
+
+.next-button1 button {
+    background-color: #ff4d4d;  /* Red color */
+    color: white;
+    font-size: 16px;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: auto; /* Button width adjusts based on content */
+    transition: background-color 0.3s ease;
+}
+
+.next-button1 button:hover {
+    background-color: #cc0000;  /* Darker red on hover */
+}
