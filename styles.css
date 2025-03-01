@@ -1,53 +1,42 @@
-/* Import Google Font Alternative (Backup if Impact is Missing) */
-@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
-
 /* Basic styling for the body */
 body {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', 'Bangers', sans-serif;
+    font-family: 'Roboto', sans-serif;
     background: linear-gradient(to right, #6a11cb, #2575fc);
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /* Allows scrolling when needed */
+    height: 100vh;
     width: 100vw;
-    overflow-y: auto; /* Enables vertical scrolling */
-    color: #fff;
+    overflow: auto; /* Enables scrolling */
 }
 
-/* Prevents zooming issues on iPhone */
-html {
-    -webkit-text-size-adjust: 100%;
-}
-
-/* Form wrapper */
+/* Form wrapper to allow scrolling */
 .form-wrapper {
-    width: 100%;
+    width: 120%; /* Makes it wider for horizontal scrolling */
+    height: 150%; /* Makes it taller for vertical scrolling */
+    overflow: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
 }
 
-/* Form container (Responsive width) */
+/* Form container */
 .form-container {
     background-color: #fff;
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    width: 90%; /* Responsive width */
-    max-width: 500px; /* Prevents it from being too wide */
-    max-height: 85vh; /* Prevents overflow */
+    width: 600px; /* Increased width */
+    height: 800px; /* Increased height */
     box-sizing: border-box;
     transition: transform 0.3s ease, opacity 0.3s ease;
     opacity: 0;
     transform: translateY(50px);
-    overflow-y: auto; /* Enables scrolling inside the form */
-    color: #333;
+    overflow: auto; /* Allows scrolling inside the form */
 }
 
-/* Show effect */
 .form-container.show {
     opacity: 1;
     transform: translateY(0);
@@ -55,95 +44,80 @@ html {
 
 /* Heading */
 h1 {
-    font-family: Impact, 'Bangers', sans-serif;
-    font-size: 2rem; /* Adjusted for mobile */
     text-align: center;
     color: #333;
+    font-size: 2rem;
     margin-bottom: 20px;
     font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-/* Form labels */
+/* Form element styling */
 label {
     font-size: 16px;
     color: #333;
     margin-bottom: 8px;
     display: block;
-    font-family: Impact, sans-serif;
 }
 
-/* Input, select, textarea */
 input, select, textarea {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 14px;
+    padding: 12px;
+    margin-bottom: 16px;
     border: 1px solid #ccc;
-    border-radius: 6px;
+    border-radius: 8px;
     font-size: 14px;
+    box-sizing: border-box;
     background-color: #f9f9f9;
     transition: all 0.3s ease;
 }
 
 /* Specific styling for textarea (Remarks) */
 textarea {
-    height: 100px;
+    height: 100px; /* Adjust as needed */
 }
 
-/* Focus effect */
+/* Focus effect for input fields */
 input:focus, select:focus, textarea:focus {
     border-color: #2575fc;
     background-color: #e6f0ff;
     outline: none;
 }
 
-/* Submit button */
+/* Submit button styling */
 input[type="submit"] {
     background-color: #2575fc;
     color: #fff;
     font-size: 16px;
     border: none;
-    padding: 12px;
-    border-radius: 6px;
+    padding: 15px;
+    border-radius: 8px;
     cursor: pointer;
     width: 100%;
     transition: background-color 0.3s ease;
-    text-transform: uppercase;
-    font-family: Impact, sans-serif;
+    font-weight: 500;
 }
 
 input[type="submit"]:hover {
     background-color: #1a62d6;
 }
 
-/* Responsive design for small screens */
+/* Responsive design for smaller screens */
 @media screen and (max-width: 768px) {
     .form-container {
-        width: 95%; /* More flexible */
-        max-width: 450px; /* Prevents too wide form */
-        max-height: 80vh; /* Adjust height for small screens */
-    }
-
-    h1 {
-        font-size: 1.8rem;
+        width: 90%;
+        height: auto;
     }
 }
 
 @media screen and (max-width: 480px) {
     .form-container {
-        width: 90%;
-        max-width: 400px;
+        max-width: 90%;
         height: auto;
-        padding: 20px;
+        padding: 15px;
     }
 
     h1 {
-        font-size: 1.5rem;
-    }
-
-    input, select, textarea {
-        font-size: 14px;
-        padding: 8px;
+        font-size: 1.3rem;
     }
 }
