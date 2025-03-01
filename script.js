@@ -12,13 +12,18 @@ window.onload = function () {
     document.getElementById("time").value = `${hours}:${minutes}`;
 };
 
-// Prevent double submission
+// Prevent double submission and multiple data entries
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.querySelector("form");
     const submitButton = form.querySelector('input[type="submit"]');
 
-    form.addEventListener("submit", function () {
-        submitButton.disabled = true; // Disable button
+    form.addEventListener("submit", function (event) {
+        if (submitButton.disabled) {
+            event.preventDefault();  // Prevent form submission if the button is already disabled
+            return; // Stop further action
+        }
+
+        submitButton.disabled = true; // Disable the button
         submitButton.value = "Submitting..."; // Change button text
     });
 });
