@@ -11,7 +11,7 @@
     
     <div class="form-wrapper">
         <div class="form-container" id="form-container">
-            <h1>Kasey Game Records</h1>
+            <h1>Player Info Form</h1>
             <form action="https://script.google.com/macros/s/AKfycbwmzb28qBPMOLBJ0wpxR8LpqzEnSmAZQma055PP1O6WAzWsIEGNzY19Xp26hAv6ggcg/exec" method="POST">
                 <label for="player_name">Player's Name:</label>
                 <input type="text" id="player_name" name="player_name" required>
@@ -62,6 +62,7 @@
     </div>
 
     <script>
+        // Function to set current date and time on page load
         window.onload = function () {
             const today = new Date();
 
@@ -73,10 +74,27 @@
             const hours = String(today.getHours()).padStart(2, '0');
             const minutes = String(today.getMinutes()).padStart(2, '0');
             document.getElementById("time").value = `${hours}:${minutes}`;
+        };
 
-            const formContainer = document.getElementById("form-container");
-            formContainer.classList.add("show");
-        }
+        // Prevent double submission and multiple data entries
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.querySelector("form");
+            const submitButton = form.querySelector('input[type="submit"]');
+            
+            // Track form submission
+            let isFormSubmitted = false;
+
+            form.addEventListener("submit", function (event) {
+                if (isFormSubmitted) {
+                    event.preventDefault();  // Prevent further submissions if already submitted
+                    return; // Stop further action
+                }
+
+                isFormSubmitted = true; // Flag that the form has been submitted
+                submitButton.disabled = true; // Disable the submit button
+                submitButton.value = "Submitting..."; // Change button text
+            });
+        });
     </script>
 </body>
 </html>
