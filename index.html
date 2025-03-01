@@ -60,7 +60,11 @@
         </div>
     </div>
 
-    <script src="script.js"></script> <!-- Link to external JavaScript file -->
-
+    <script>
+        window.onload = function() {
+            const formContainer = document.getElementById("form-container");
+            formContainer.classList.add("show");
+        }
+    </script>
 </body>
 </html>
