@@ -77,6 +77,41 @@
             const formContainer = document.getElementById("form-container");
             formContainer.classList.add("show");
         }
+
+        // Prevent double submission and multiple data entries
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.querySelector("form");
+            const submitButton = form.querySelector('input[type="submit"]');
+            
+            // Track form submission
+            let isFormSubmitted = false;
+
+            // Prevent submit using form submission
+            form.addEventListener("submit", function (event) {
+                if (isFormSubmitted) {
+                    event.preventDefault();  // Prevent further submissions if already submitted
+                    return; // Stop further action
+                }
+
+                isFormSubmitted = true; // Flag that the form has been submitted
+                submitButton.disabled = true; // Disable the submit button
+                submitButton.value = "Submitting..."; // Change button text
+            });
+
+            // Add touch event for mobile users
+            submitButton.addEventListener("touchstart", function (event) {
+                if (isFormSubmitted) {
+                    event.preventDefault(); // Prevent submission if the form is already submitted
+                }
+            });
+
+            // Also listen for click event to handle mobile and desktop scenarios
+            submitButton.addEventListener("click", function (event) {
+                if (isFormSubmitted) {
+                    event.preventDefault();  // Prevent click if already submitted
+                }
+            });
+        });
     </script>
 </body>
 </html>
