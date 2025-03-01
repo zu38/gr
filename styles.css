@@ -1,6 +1,3 @@
-/* Import Google Font Alternative (Backup if Impact is Missing) */
-@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
-
 /* Basic styling for the body */
 body {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', 'Bangers', sans-serif;
@@ -16,29 +13,30 @@ body {
     color: #fff; /* Makes text readable */
 }
 
-/* Form wrapper to center the form */
+/* Form wrapper */
 .form-wrapper {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px; /* Prevents content from touching edges */
+    padding: 20px;
 }
 
-/* Form container */
+/* Responsive Form Container */
 .form-container {
     background-color: #fff;
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    width: 600px;
-    max-height: 90vh;
+    width: 90%; /* Adjusts width dynamically */
+    max-width: 500px; /* Prevents it from being too wide */
+    max-height: 90vh; /* Keeps it within the screen height */
     box-sizing: border-box;
     transition: transform 0.3s ease, opacity 0.3s ease;
     opacity: 0;
     transform: translateY(50px);
     overflow-y: auto; /* Enables scrolling inside the form */
-    color: #333; /* Makes text inside form readable */
+    color: #333;
 }
 
 /* Show effect */
@@ -49,8 +47,7 @@ body {
 
 /* Heading */
 h1 {
-    font-family: Impact, 'Bangers', sans-serif;
-    font-size: 2.5rem;
+    font-size: 2rem;
     text-align: center;
     color: #333;
     margin-bottom: 20px;
@@ -78,57 +75,25 @@ input, select, textarea {
     box-sizing: border-box;
     background-color: #f9f9f9;
     transition: all 0.3s ease;
-    font-family: Arial, sans-serif; /* Keeps form fields readable */
 }
 
-/* Specific styling for textarea (Remarks) */
-textarea {
-    height: 100px;
-}
-
-/* Focus effect for input fields */
-input:focus, select:focus, textarea:focus {
-    border-color: #2575fc;
-    background-color: #e6f0ff;
-    outline: none;
-}
-
-/* Submit button styling */
-input[type="submit"] {
-    background-color: #2575fc;
-    color: #fff;
-    font-size: 16px;
-    border: none;
-    padding: 15px;
-    border-radius: 8px;
-    cursor: pointer;
-    width: 100%;
-    transition: background-color 0.3s ease;
-    font-weight: 500;
-    text-transform: uppercase;
-    font-family: Impact, sans-serif;
-}
-
-input[type="submit"]:hover {
-    background-color: #1a62d6;
-}
-
-/* Responsive design for smaller screens */
+/* Responsive adjustments for small screens */
 @media screen and (max-width: 768px) {
     .form-container {
-        width: 90%;
-        max-height: 80vh;
+        width: 95%;
+        max-width: 450px;
+        max-height: none; /* Allows the form to expand if needed */
     }
 }
 
 @media screen and (max-width: 480px) {
     .form-container {
-        max-width: 90%;
-        height: auto;
-        padding: 15px;
+        width: 95%;
+        max-width: 400px;
+        padding: 20px;
     }
 
     h1 {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
     }
 }
