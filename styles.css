@@ -133,8 +133,8 @@ input[type="submit"]:hover {
 /* Styling for the 'Next' button positioned at the top left */
 .next-button {
     position: absolute;
-    top: 20px;  /* Adjust as needed */
-    left: 20px; /* Adjust as needed */
+    top: 20px;  /* Distance from the top of the page */
+    left: 20px; /* Distance from the left of the page */
     z-index: 100;  /* Ensure it's above other content */
 }
 
