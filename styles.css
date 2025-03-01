@@ -1,9 +1,9 @@
-/* Import Google Font Alternative (Backup if Impact is Missing) */
+/* Import Google Font Alternative */
 @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
 
 /* Basic styling for the body */
 body {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', 'Bangers', sans-serif;
+    font-family: 'Impact', 'Bangers', Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     background: linear-gradient(to right, #6a11cb, #2575fc);
     margin: 0;
     padding: 0;
@@ -12,8 +12,8 @@ body {
     align-items: center;
     min-height: 100vh;
     width: 100vw;
-    overflow-x: hidden; /* Prevents horizontal scrolling */
-    overflow-y: auto; /* Enables vertical scrolling */
+    overflow-x: hidden;
+    overflow-y: auto;
     color: #fff;
 }
 
@@ -23,86 +23,42 @@ html {
     touch-action: manipulation; /* Improves touch response */
 }
 
-/* Form wrapper */
-.form-wrapper {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-}
-
-/* Form container (Responsive width & height) */
+/* Form container */
 .form-container {
     background-color: #fff;
     padding: 25px;
     border-radius: 15px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    width: 90%; /* Flexible width */
-    max-width: 500px; /* Prevents it from being too wide */
-    height: auto; /* Allows content to expand naturally */
-    max-height: none; /* Fixes height issues on Android */
+    width: 90%;
+    max-width: 500px;
     box-sizing: border-box;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    opacity: 0;
-    transform: translateY(50px);
-    overflow-y: auto; /* Allows scrolling inside the form */
+    overflow-y: auto;
     color: #333;
-}
-
-/* Show effect */
-.form-container.show {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 /* Heading */
 h1 {
-    font-family: Impact, 'Bangers', sans-serif;
+    font-family: 'Impact', 'Bangers', Haettenschweiler, sans-serif;
     font-size: 2rem;
     text-align: center;
     color: #333;
     margin-bottom: 15px;
     font-weight: 700;
-    letter-spacing: 2px;
     text-transform: uppercase;
 }
 
-/* Form labels */
+/* Labels */
 label {
+    font-family: 'Impact', 'Bangers', Haettenschweiler, sans-serif;
     font-size: 16px;
     color: #333;
     margin-bottom: 8px;
     display: block;
-    font-family: Impact, sans-serif;
-}
-
-/* Input, select, textarea */
-input, select, textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 14px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 14px;
-    background-color: #f9f9f9;
-    transition: all 0.3s ease;
-}
-
-/* Specific styling for textarea (Remarks) */
-textarea {
-    height: 100px;
-}
-
-/* Focus effect */
-input:focus, select:focus, textarea:focus {
-    border-color: #2575fc;
-    background-color: #e6f0ff;
-    outline: none;
 }
 
 /* Submit button */
 input[type="submit"] {
+    font-family: 'Impact', 'Bangers', Haettenschweiler, sans-serif;
     background-color: #2575fc;
     color: #fff;
     font-size: 16px;
@@ -111,42 +67,5 @@ input[type="submit"] {
     border-radius: 6px;
     cursor: pointer;
     width: 100%;
-    transition: background-color 0.3s ease;
     text-transform: uppercase;
-    font-family: Impact, sans-serif;
-}
-
-input[type="submit"]:hover {
-    background-color: #1a62d6;
-}
-
-/* Responsive design for tablets */
-@media screen and (max-width: 768px) {
-    .form-container {
-        width: 95%;
-        max-width: 450px;
-        height: auto;
-    }
-
-    h1 {
-        font-size: 1.8rem;
-    }
-}
-
-/* Responsive design for mobile screens */
-@media screen and (max-width: 480px) {
-    .form-container {
-        width: 92%;
-        max-width: 380px;
-        padding: 20px;
-    }
-
-    h1 {
-        font-size: 1.5rem;
-    }
-
-    input, select, textarea {
-        font-size: 14px;
-        padding: 8px;
-    }
 }
