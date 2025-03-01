@@ -14,12 +14,14 @@ body {
 
 /* Form wrapper to allow scrolling */
 .form-wrapper {
-    width: 120%; /* Makes it wider for horizontal scrolling */
-    height: 150%; /* Makes it taller for vertical scrolling */
-    overflow: auto;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 /* Form container */
@@ -28,8 +30,8 @@ body {
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    width: 600px; /* Increased width */
-    height: 800px; /* Increased height */
+    width: 100%;
+    max-width: 600px; /* Responsive max-width */
     box-sizing: border-box;
     transition: transform 0.3s ease, opacity 0.3s ease;
     opacity: 0;
@@ -50,6 +52,7 @@ h1 {
     margin-bottom: 20px;
     font-weight: 700;
     letter-spacing: 1px;
+    font-family: 'Impact', sans-serif; /* Impact font */
 }
 
 /* Form element styling */
@@ -107,6 +110,7 @@ input[type="submit"]:hover {
     .form-container {
         width: 90%;
         height: auto;
+        padding: 20px;
     }
 }
 
@@ -118,6 +122,10 @@ input[type="submit"]:hover {
     }
 
     h1 {
-        font-size: 1.3rem;
+        font-size: 1.5rem;
+    }
+
+    input[type="submit"] {
+        padding: 12px;
     }
 }
