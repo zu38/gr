@@ -130,3 +130,27 @@ input[type="submit"]:hover {
         padding: 12px;
     }
 }
+
+/* Styling for the 'Next' button */
+.next-button {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.next-button button {
+    background-color: #ff4d4d;  /* Red color */
+    color: white;
+    font-size: 16px;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.next-button button:hover {
+    background-color: #cc0000;  /* Darker red on hover */
+}
+
