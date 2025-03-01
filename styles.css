@@ -131,11 +131,12 @@ input[type="submit"]:hover {
     }
 }
 
-/* Styling for the 'Next' button */
+/* Styling for the 'Next' button positioned at the top left */
 .next-button {
-    display: block;
-    text-align: center;
-    margin-top: 20px;
+    position: absolute;
+    top: 20px;  /* Adjust as needed */
+    left: 20px; /* Adjust as needed */
+    z-index: 100;  /* Ensure it's above other content */
 }
 
 .next-button button {
@@ -146,7 +147,7 @@ input[type="submit"]:hover {
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    width: 100%;
+    width: auto; /* Button width adjusts based on content */
     transition: background-color 0.3s ease;
 }
 
