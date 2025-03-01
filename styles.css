@@ -60,7 +60,7 @@ label {
     display: block;
 }
 
-input, select {
+input, select, textarea {
     width: 100%;
     padding: 12px;
     margin-bottom: 16px;
@@ -72,8 +72,13 @@ input, select {
     transition: all 0.3s ease;
 }
 
+/* Specific styling for textarea (Remarks) */
+textarea {
+    height: 100px; /* Adjust as needed */
+}
+
 /* Focus effect for input fields */
-input:focus, select:focus {
+input:focus, select:focus, textarea:focus {
     border-color: #2575fc;
     background-color: #e6f0ff;
     outline: none;
