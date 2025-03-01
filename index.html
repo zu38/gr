@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kasey Game Records</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Impact&display=swap" rel="stylesheet"> <!-- External Fonts -->
     <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->
 </head>
 <body>
@@ -61,7 +62,18 @@
     </div>
 
     <script>
-        window.onload = function() {
+        window.onload = function () {
+            const today = new Date();
+
+            // Format date as YYYY-MM-DD
+            const formattedDate = today.toISOString().split('T')[0];
+            document.getElementById("date").value = formattedDate;
+
+            // Format time as HH:MM (24-hour format)
+            const hours = String(today.getHours()).padStart(2, '0');
+            const minutes = String(today.getMinutes()).padStart(2, '0');
+            document.getElementById("time").value = `${hours}:${minutes}`;
+
             const formContainer = document.getElementById("form-container");
             formContainer.classList.add("show");
         }
