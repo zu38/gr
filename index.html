@@ -4,26 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kasey Game Records</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Impact&display=swap" rel="stylesheet"> <!-- External Fonts -->
-    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Impact&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-   
-    
     <div class="form-wrapper">
-        <!-- "Next" Button that redirects to a new page -->
-            <a href="https://zu38.github.io/id" class="next-button">
-                <button type="button">Agent Link</button>
-            </a>
-
-         <a href="https://zu38.github.io/pid" class="next-button1">
-                <button type="button">Player Link</button>
-            </a>
-        
+        <a href="https://zu38.github.io/id" class="next-button">
+            <button type="button">Agent Link</button>
+        </a>
+        <a href="https://zu38.github.io/pid" class="next-button1">
+            <button type="button">Player Link</button>
+        </a>
         <div class="form-container" id="form-container">
-             
             <h1>Kasey Game Records</h1>
-            
             <form action="https://script.google.com/macros/s/AKfycbwmzb28qBPMOLBJ0wpxR8LpqzEnSmAZQma055PP1O6WAzWsIEGNzY19Xp26hAv6ggcg/exec" method="POST">
                 <label for="player_name">Player's Name:</label>
                 <input type="text" id="player_name" name="player_name" required>
@@ -68,60 +61,52 @@
                 <label for="remarks">Remarks:</label>
                 <textarea id="remarks" name="remarks" class="remarks-field"></textarea>
 
+                <label for="record_from">Record from:</label>
+                <select id="record_from" name="record_from" required>
+                    <option value="kasey">Kasey</option>
+                    <option value="others">Others</option>
+                </select>
+
                 <input type="submit" value="Submit">
             </form>
-             
         </div>
     </div>
 
     <script>
         window.onload = function () {
             const today = new Date();
-
-            // Format date as YYYY-MM-DD
             const formattedDate = today.toISOString().split('T')[0];
             document.getElementById("date").value = formattedDate;
-
-            // Format time as HH:MM (24-hour format)
             const hours = String(today.getHours()).padStart(2, '0');
             const minutes = String(today.getMinutes()).padStart(2, '0');
             document.getElementById("time").value = `${hours}:${minutes}`;
-
-            const formContainer = document.getElementById("form-container");
-            formContainer.classList.add("show");
+            document.getElementById("form-container").classList.add("show");
         }
 
-        // Prevent double submission and multiple data entries
         document.addEventListener("DOMContentLoaded", function () {
             const form = document.querySelector("form");
             const submitButton = form.querySelector('input[type="submit"]');
-            
-            // Track form submission
             let isFormSubmitted = false;
 
-            // Prevent submit using form submission
             form.addEventListener("submit", function (event) {
                 if (isFormSubmitted) {
-                    event.preventDefault();  // Prevent further submissions if already submitted
-                    return; // Stop further action
+                    event.preventDefault();
+                    return;
                 }
-
-                isFormSubmitted = true; // Flag that the form has been submitted
-                submitButton.disabled = true; // Disable the submit button
-                submitButton.value = "Submitting..."; // Change button text
+                isFormSubmitted = true;
+                submitButton.disabled = true;
+                submitButton.value = "Submitting...";
             });
 
-            // Add touch event for mobile users
             submitButton.addEventListener("touchstart", function (event) {
                 if (isFormSubmitted) {
-                    event.preventDefault(); // Prevent submission if the form is already submitted
+                    event.preventDefault();
                 }
             });
 
-            // Also listen for click event to handle mobile and desktop scenarios
             submitButton.addEventListener("click", function (event) {
                 if (isFormSubmitted) {
-                    event.preventDefault();  // Prevent click if already submitted
+                    event.preventDefault();
                 }
             });
         });
