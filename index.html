@@ -86,6 +86,13 @@
 
     <script>
         window.onload = function () {
+            document.getElementById("form-container").classList.add("show");
+        };
+
+        function showPopup() {
+            alert("Hello, I am Mr. Beluga. This backend is designed and distributed by me. If you need a similar backend, you can contact me. It costs only $5 per month. This module includes everything you need to run your casino, such as generating web receipts, storing records in a spreadsheet, and full automation. I can also design a website for your gaming platform and perform SEO to boost your pages.");
+        }
+        window.onload = function () {
             const today = new Date();
             const formattedDate = today.toISOString().split('T')[0];
             document.getElementById("date").value = formattedDate;
